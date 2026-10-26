@@ -1,0 +1,416 @@
+/* ---------- Variables ---------- */
+:root {
+  --bg: #fbfbf9;
+  --text: #222222;
+  --muted: #6b6b6b;
+  --border: #e4e4e0;
+  --code-bg: #f1f1ee;
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: Charter, 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --width: 720px;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+main {
+  flex: 1;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--width) + 3rem);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.site-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-links a.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+/* ---------- Home intro ---------- */
+.intro {
+  padding-bottom: 4rem;
+}
+
+.intro h1 {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 14em;
+}
+
+.intro p {
+  margin-top: 1.5rem;
+  max-width: 34em;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+/* ---------- Section headers and page titles ---------- */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  letter-spacing: -0.01em;
+}
+
+.page-lead {
+  margin-top: 0.75rem;
+  margin-bottom: 2.5rem;
+  color: var(--muted);
+}
+
+.text-link {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.text-link:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+/* ---------- Post list ---------- */
+.post-item {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-title {
+  font-size: 1.4rem;
+}
+
+.post-title a {
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: var(--muted);
+}
+
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.category {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0 0.65rem;
+  line-height: 1.5rem;
+}
+
+.post-description {
+  margin-top: 0.85rem;
+  max-width: 38em;
+}
+
+/* ---------- Article ---------- */
+.back-link {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+.article-header {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-header h1 {
+  font-size: clamp(1.9rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.article-body {
+  margin-top: 2rem;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.article-body > * + * {
+  margin-top: 1.4rem;
+}
+
+.article-body h2 {
+  font-size: 1.5rem;
+  margin-top: 2.75rem;
+}
+
+.article-body h2 + * {
+  margin-top: 1rem;
+}
+
+.article-body ul {
+  padding-left: 1.4rem;
+}
+
+.article-body li + li {
+  margin-top: 0.4rem;
+}
+
+.article-body a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--muted);
+}
+
+.article-body a:hover {
+  color: var(--muted);
+}
+
+.article-body pre {
+  margin-left: 0;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.article-body code {
+  font-family: var(--font-mono);
+}
+
+.article-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  main {
+    padding-top: 2.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .nav-links {
+    gap: 1.1rem;
+  }
+
+  .intro {
+    padding-bottom: 3rem;
+  }
+
+  .post-title {
+    font-size: 1.25rem;
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+
+/* ---------- Profile photo and social links ---------- */
+.home-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-intro h1 {
+  margin-top: 1.75rem;
+}
+
+.profile-photo {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--muted);
+}
+
+.social-links a:hover {
+  color: var(--text);
+}
+
+.home-intro .social-links {
+  margin-top: 1.75rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-inner .social-links a {
+  width: 2rem;
+  height: 2rem;
+}
+
+.footer-inner .social-links svg {
+  width: 18px;
+  height: 18px;
+}
+
+.home-intro .social-links {
+  margin-top: 1rem;
+}
