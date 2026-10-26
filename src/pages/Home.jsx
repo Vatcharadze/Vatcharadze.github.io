@@ -20,7 +20,7 @@ export default function Home() {
           height="128"
         />
         <SocialLinks />
-        <p>Davit Vatcharadze | DevOps Engineer</p>
+        <p>Davit Vatcharadze</p>
         <h1>Check Out My Personal Projects.</h1>
       </section>
 
