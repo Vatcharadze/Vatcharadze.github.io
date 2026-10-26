@@ -8,7 +8,7 @@ export default function About() {
       <h1 className="page-title">About</h1>
       <div className="article-body">
         <p>
-        I'm a Computer Science student passionate about technology, programming, and DevOps. I enjoy learning new skills, exploring different technologies, and building projects that help me grow as a developer.
+        I'm a Computer Science student | DevOps Engineer passionate about technology, programming, and DevOps. I enjoy learning new skills, exploring different technologies, and building projects that help me grow as a developer.
          I'm always looking for new challenges and opportunities to improve my knowledge and experience.
         </p>
         
