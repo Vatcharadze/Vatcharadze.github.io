@@ -9,7 +9,7 @@ export default function Blog() {
   return (
     <section>
       <h1 className="page-title">Blog</h1>
-      <p className="page-lead">Check My Personal Projects.</p>
+      <p className="page-lead">Check My Personal Projects & Posts.</p>
       <div className="post-list">
         {posts.map((post) => (
           <BlogPost key={post.slug} post={post} />
