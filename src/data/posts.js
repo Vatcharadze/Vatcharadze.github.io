@@ -369,4 +369,57 @@ export const posts = [
       },
     ],
   },
+  {
+  slug: 'jenkins-vs-argo-cd-gitops-evolution',
+  title: 'Jenkins vs Argo CD: From Push-Based CI/CD to Pull-Based GitOps',
+  date: '2026-11-01',
+  category: 'DevOps',
+  description:
+    'How traditional CI/CD engines like Jenkins differ from Kubernetes-native GitOps tools like Argo CD, and when to use each.',
+  content: [
+    {
+      type: 'paragraph',
+      text: 'For years, Jenkins has been the go-to automation server for building, testing, and deploying software. But the rise of Kubernetes introduced cloud-native deployment patterns that exposed the limits of traditional automation, paving the way for Argo CD and the GitOps philosophy. Understanding how the two differ is key to choosing the right delivery strategy.',
+    },
+
+    {
+      type: 'heading',
+      text: 'Push-Based vs. Pull-Based Architecture',
+    },
+    {
+      type: 'paragraph',
+      text: 'The most fundamental difference is how deployments are triggered. Jenkins uses a push-based model: the pipeline runs externally and pushes changes to the target environment using administrative credentials. Argo CD uses a pull-based model: it runs inside the Kubernetes cluster, watches a Git repository, and pulls in configuration changes automatically, so cluster secrets are never exposed to outside systems.',
+    },
+
+    {
+      type: 'heading',
+      text: 'Continuous Reconciliation and Drift Detection',
+    },
+    {
+      type: 'paragraph',
+      text: 'A traditional Jenkins pipeline runs from start to finish and then stops. If someone manually changes the cluster afterwards, Jenkins will not notice until the next execution. Argo CD, by contrast, runs a continuous loop. It compares the live cluster state against the desired state in Git, then alerts you or automatically corrects the cluster whenever drift occurs.',
+    },
+
+    {
+      type: 'heading',
+      text: 'Scope of Responsibilities',
+    },
+    {
+      type: 'list',
+      items: [
+        'Jenkins is a universal CI/CD tool. It compiles code, runs tests, builds Docker images, and manages infrastructure changes across virtual machines, bare metal, or containers.',
+        'Argo CD is a Kubernetes-only CD (Continuous Delivery) tool. It does not compile code or run tests; its sole job is keeping live clusters in sync with the manifests in Git.',
+      ],
+    },
+
+    {
+      type: 'heading',
+      text: 'Better Together: The Modern Pipeline',
+    },
+    {
+      type: 'paragraph',
+      text: 'Rather than choosing one over the other, many teams combine them. Jenkins handles continuous integration (CI): it tests the code and builds a new container image. It then updates the image tag in a dedicated Git manifest repository. Argo CD detects that commit and deploys the change into Kubernetes.',
+    },
+  ],
+},
 ]
