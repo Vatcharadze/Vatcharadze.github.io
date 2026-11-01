@@ -21,7 +21,7 @@ export default function Home() {
         />
         <SocialLinks />
         <p>Davit Vatcharadze</p>
-        <h1>Check Out My Personal Projects.</h1>
+        <h1>Check Out My Personal Projects & Posts.</h1>
       </section>
 
       <section aria-labelledby="recent-heading">
