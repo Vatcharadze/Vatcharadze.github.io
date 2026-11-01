@@ -1,4 +1,4 @@
-# My Blog
+# Blog Website
 
 A simple, minimalist personal blog built with React, Vite, and plain CSS.
 No backend, no database, no extra libraries. The only dependency besides React is React Router, which handles the page links.
@@ -48,26 +48,4 @@ src/
     posts.js          Your blog posts
 ```
 
-## Add or edit a post
-
-Open `src/data/posts.js`. Each post is an object in the `posts` list. Copy one, change its `slug`, `title`, `date` (format `YYYY-MM-DD`), `category`, `description`, and `content`, and it appears on the site automatically. Posts are sorted by date, and the reading time is calculated for you.
-
-The `content` of a post is a list of blocks:
-
-```js
-{ type: 'heading',   text: 'A section title' }
-{ type: 'paragraph', text: 'Some text.' }
-{ type: 'paragraph', text: ['Text with ', { text: 'a link', href: 'https://example.com' }, '.'] }
-{ type: 'list',      items: ['First item', 'Second item'] }
-{ type: 'code',      code: 'echo "hello"' }
-```
-
-To delete a post, remove its object from the list.
-
-## Make it yours
-
-- Blog name: change "My Blog" in `src/components/Navbar.jsx`, `src/components/Footer.jsx`, `src/utils.js`, and `index.html`.
-- Intro text: edit `src/pages/Home.jsx`.
-- Biography: edit `src/pages/About.jsx`.
-- SEO: update the `title`, `description`, and `author` in `index.html`.
-- Colors and fonts: change the variables at the top of `src/index.css`.
+x.css`.
